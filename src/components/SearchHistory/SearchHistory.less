@@ -1,0 +1,105 @@
+.history-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.4);
+  margin-bottom: 20px;
+  border-radius: 24px;
+  padding: 10px 20px;
+
+  .time {
+    margin-right: 10px;
+  }
+
+  .time-mobile {
+    display: none;
+  }
+
+  .country-name-and-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .country-name-and-index {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .index-number {
+    margin-right: 10px;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    height: 30px;
+    width: 30px;
+    border: none;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+    &.search-country {
+      background-image: url("../../shared/images/Search.svg");
+      margin-right: 10px;
+    }
+
+    &.delete {
+      background-image: url("../../shared/images/Delete.svg");
+    }
+  }
+}
+
+.no-record {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 576px) {
+  .history-item {
+    font-size: 14px;
+    padding: 10px 20px;
+    .time {
+      display: none;
+    }
+
+    .time-mobile {
+      display: unset;
+    }
+
+    .country-name-and-time {
+      display: flex;
+      flex-direction: column;
+      justify-content: unset;
+
+      .country-name-and-index {
+        margin-bottom: 5px;
+      }
+
+      .index-number {
+        display: none;
+      }
+    }
+
+    button {
+      &.search-country {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .history-item {
+    padding: 8px 10px;
+  }
+}
