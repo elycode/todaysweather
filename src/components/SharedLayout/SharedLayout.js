@@ -52,7 +52,7 @@ function SharedLayout() {
   const doSearch = async (city, country) => {
     //query the api for country only if city was left empty by user
     const query = city ? `${city},${country}` : country;
-    const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit&appid=${API_KEY}`;
+    const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit&appid=${API_KEY}`;
 
     try {
       const geoResponse = await axios.get(geoUrl);

@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "less-loader": "^11.1.0"
   }
 }
