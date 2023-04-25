@@ -1,5 +1,15 @@
 @import "../../shared/styles/variables.less";
 
+//remove white background when select autofill option
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent;
+}
+
 .shared-layout {
   background-image: url("../../shared/images/bg-light.png");
   background-repeat: no-repeat;
@@ -15,6 +25,45 @@
 
   button {
     cursor: pointer;
+  }
+
+  .toggle-button {
+    font-family: @font-family-regular;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 24px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+
+  &.dark {
+    background-image: url("../../shared/images/bg-dark.png");
+    .toggle-button {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .input-box {
+      background: rgba(26, 26, 26, 0.4);
+
+      label {
+        color: rgba(255, 255, 255, 0.4);
+      }
+
+      input {
+        color: white;
+      }
+
+      .buttons {
+        button {
+          &.search-button {
+            background-color: #28124d;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -42,7 +91,7 @@
     }
 
     input {
-      background: transparent;
+      background: none;
       width: 280px;
       height: 25px;
       border: none;
@@ -81,10 +130,11 @@
 @media only screen and (max-width: 576px) {
   .search-bar {
     max-width: 340px;
+    display: unset;
+    flex-direction: unset;
 
     form {
-      display: flex;
-      flex-direction: column;
+      display: unset;
 
       .input-box {
         margin-bottom: 10px;

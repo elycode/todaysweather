@@ -64,7 +64,7 @@ function WeatherCard(props) {
       )}
 
       {weatherState === "loaded" && (
-        <div className="weather-card">
+        <div className={`weather-card ${props.theme}`}>
           {searchResult && searchResult.main ? (
             <>
               <div className="weather-left">
@@ -90,8 +90,7 @@ function WeatherCard(props) {
                     searchResult.weather[0].description.slice(1)}
                 </p>
                 <p className="humidity grey-text">
-                  Humidity:
-                  {searchResult.main.humidity}%
+                  Humidity: {searchResult.main.humidity}%
                 </p>
                 <p className="date-time grey-text">{dateTime}</p>
               </div>

@@ -65,7 +65,7 @@ function SearchHistory(props) {
             <div>No record</div>
           </div>
         ) : (
-          <div className="history-list">
+          <div className={`history-list ${props.theme}`}>
             {searchHistory.map((result, index) => (
               <div key={index} className="history-item">
                 <div className="country-name-and-time">

@@ -7,11 +7,16 @@ import axios from "axios";
 
 function SharedLayout() {
   const API_KEY = process.env.REACT_APP_API_KEY;
+  const [theme, setTheme] = useState("light");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
 
   //Track state of the weather api's response
   const [searchResult, setSearchResult] = useState([]);
+
+  function toggleTheme() {
+    setTheme(theme === "light" ? "dark" : "light");
+  }
 
   const handleCityChange = (event) => {
     setCity(event.target.value);
@@ -91,7 +96,7 @@ function SharedLayout() {
 
   return (
     <>
-      <div className="shared-layout">
+      <div className={`shared-layout ${theme}`}>
         <div className="search-bar">
           <form onSubmit={handleSubmit}>
             <div className="input-box">
@@ -126,9 +131,12 @@ function SharedLayout() {
             </div>
           </form>
         </div>
+        <button onClick={toggleTheme} className="toggle-button">Toggle Theme</button>
         <Main
           searchResult={searchResult}
           onSearchHistroyAgain={handleSubmitAgain}
+          theme={theme}
+          toggleTheme={toggleTheme}
         />
       </div>
     </>

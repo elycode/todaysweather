@@ -13,7 +13,7 @@ function Main(props) {
 
   return (
     <>
-      <div className="main">
+      <div  className={`main ${props.theme}`}>
         <div className="weather-image">
           {props.searchResult && props.searchResult.main ? (
             <img
@@ -23,11 +23,19 @@ function Main(props) {
           ) : null}
         </div>
         <div>
-          <WeatherCard searchResult={props.searchResult} />
+          <WeatherCard
+            searchResult={props.searchResult}
+            theme={props.theme}
+            toggleTheme={props.toggleTheme}
+          />
         </div>
         <div className="search-history">
           <div className="history-title">Search History</div>
-          <SearchHistory onSearchHistoryClick={handleSearchHistoryClick} />
+          <SearchHistory
+            onSearchHistoryClick={handleSearchHistoryClick}
+            theme={props.theme}
+            toggleTheme={props.toggleTheme}
+          />
         </div>
       </div>
     </>

@@ -1,3 +1,20 @@
+.history-list&.dark {
+  color: white;
+  .history-item {
+    background: rgba(26, 26, 26, 0.5);
+  }
+
+  button {
+    &.search-country, &.delete {
+      background-color: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      &img {
+        fill: white;
+      }
+    }
+  }
+}
+
 .history-item {
   display: flex;
   flex-direction: row;
