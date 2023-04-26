@@ -117,7 +117,7 @@ function SharedLayout() {
                 onChange={handleCountryChange}
               ></input>
             </div>
-            <div className="buttons">
+            <div className={`buttons ${theme}`}>
               <button
                 type="submit"
                 className="search-button"
